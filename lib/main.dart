@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
 
+
+import './question.dart';
+
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState(); //new MyAppState()
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  var _currentQuestionIndex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _currentQuestionIndex++;
+    });
+    print(_currentQuestionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -17,17 +36,19 @@ class MyApp extends StatelessWidget {
             ),
             body: Column(
               children: [
-                Text('Question goes here'),
+                Question(
+                  questions[_currentQuestionIndex],
+                ),
                 RaisedButton(
-                  onPressed: null,
+                  onPressed: _answerQuestion,
                   child: Text('Answer 1'),
                 ),
                 RaisedButton(
-                  onPressed: null,
+                  onPressed: _answerQuestion,
                   child: Text('Answer 2'),
                 ),
                 RaisedButton(
-                  onPressed: null,
+                  onPressed: _answerQuestion,
                   child: Text('Answer3'),
                 ),
               ],

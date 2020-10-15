@@ -16,36 +16,6 @@ class _MyAppState extends State<MyApp> {
   var _currentQuestionIndex = 0;
   var _totalScore = 0;
 
-  final questions = const [
-    {
-      'questionText': 'What is your favorite color',
-      'answers': [
-        'Black',
-        'Red',
-        'Green',
-        'White',
-      ],
-    },
-    {
-      'questionText': 'What is your favorite animal',
-      'answers': [
-        'Dog',
-        'Cat',
-        'Bird',
-        'Rabbit',
-      ],
-    },
-    {
-      'questionText': 'Who is your favourite instructor',
-      'answers': [
-        'Max',
-        'Mosh',
-        'Marcus',
-        'Michal',
-      ],
-    },
-  ];
-
   void _answerQuestion(int score) {
     _totalScore += score;
 
@@ -66,7 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    const _questions = const [
+    const _questions = [
       {
         'questionText': 'What is your favorite color',
         'answers': [
@@ -77,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         ],
       },
       {
-        'questionText': 'What is your favorite animal',
+        'questionText': 'What is your favoritse animal',
         'answers': [
           {'text': 'Dog', 'score': 1},
           {'text': 'Cat', 'score': 3},
